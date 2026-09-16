@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RoboFuture Kids – AI &amp; Robotics Learning Guide for Children | ₹299 Launch Offer</title>
+<meta name="description" content="RoboFuture Kids is a beginner-friendly digital guide that introduces children to AI, robotics, electronics and STEM through simple, hands-on learning. Launch offer ₹299 (usual value ₹1,999).">
+<meta name="keywords" content="kids AI learning, robotics for kids, STEM for children, Arduino for beginners, kids electronics guide, homeschool STEM resource, educational digital guide for children">
+<meta property="og:title" content="RoboFuture Kids – AI & Robotics Learning Guide for Children">
+<meta property="og:description" content="A beginner-friendly digital guide introducing kids to AI, robotics, electronics and STEM. Limited-time launch offer: ₹299 (usual value ₹1,999).">
+<meta property="og:image" content="robofuture-cover.png">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#080b16;
+    --bg-soft:#0d1224;
+    --surface:#121a30;
+    --surface-2:#161f3a;
+    --border:rgba(255,255,255,0.09);
+    --text:#eaeefb;
+    --text-dim:#96a2c3;
+    --text-dimmer:#6c7799;
+    --blue:#4dd8ff;
+    --violet:#a78bfa;
+    --green:#3ee6a8;
+    --amber:#ffc857;
+    --gradient:linear-gradient(120deg,var(--blue),var(--violet) 55%,var(--green));
+    --radius-lg:22px;
+    --radius-md:16px;
+    --radius-sm:10px;
+    --container:1180px;
+    --shadow-glow:0 0 0 1px rgba(255,255,255,0.05), 0 20px 60px -20px rgba(77,216,255,0.18);
+  }
+
+  *,*::before,*::after{ box-sizing:border-box; }
+
+  html{
+    width:100%;
+    max-width:100%;
+    overflow-x:hidden;
+    scroll-behavior:smooth;
+  }
+
+  body{
+    width:100%;
+    max-width:100%;
+    min-width:0;
+    margin:0;
+    overflow-x:hidden;
+    background:var(--bg);
+    color:var(--text);
+    font-family:"Inter",system-ui,-apple-system,sans-serif;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    padding-bottom:78px;
+  }
+
+  @media (min-width:860px){
+    body{ padding-bottom:0; }
+  }
+
+  section, header, footer, div, nav, main { min-width:0; }
+
+  img{
+    display:block;
+    max-width:100%;
+    height:auto;
+  }
+
+  h1,h2,h3,h4{
+    font-family:"Fredoka",system-ui,sans-serif;
+    font-weight:600;
+    line-height:1.15;
+    margin:0;
+    color:#fbfcff;
+  }
+
+  p{ margin:0; }
+
+  a{ color:inherit; text-decoration:none; }
+
+  ul{ margin:0; padding:0; list-style:none; }
+
+  button{ font-family:inherit; }
+
+  .container{
+    width:min(100% - 40px, var(--container));
+    max-width:var(--container);
+    margin-inline:auto;
+  }
+
+  section{
+    padding:88px 0;
+  }
+
+  @media (max-width:640px){
+    section{ padding:60px 0; }
+  }
+
+  .eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-size:0.85rem;
+    font-weight:600;
+    color:var(--blue);
+    background:rgba(77,216,255,0.1);
+    border:1px solid rgba(77,216,255,0.25);
+    padding:6px 14px;
+    border-radius:999px;
+    margin-bottom:18px;
+  }
+
+  .section-head{
+    max-width:640px;
+    margin-bottom:48px;
+  }
+  .section-head.center{ margin-inline:auto; text-align:center; }
+  .section-head h2{
+    font-size:clamp(1.7rem,3.6vw,2.5rem);
+    margin-bottom:14px;
+  }
+  .section-head p{
+    color:var(--text-dim);
+    font-size:1.05rem;
+  }
+
+  /* ---------- Buttons ---------- */
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    font-family:"Fredoka",sans-serif;
+    font-weight:600;
+    font-size:1rem;
+    padding:15px 30px;
+    border-radius:999px;
+    border:none;
+    cursor:pointer;
+    transition:transform 0.18s ease, box-shadow 0.18s ease;
+    white-space:nowrap;
+  }
+  .btn-primary{
+    background:var(--gradient);
+    color:#06121a;
+    box-shadow:0 14px 34px -12px rgba(77,216,255,0.55);
+  }
+  .btn-primary:hover{ transform:translateY(-2px); box-shadow:0 18px 40px -12px rgba(77,216,255,0.7); }
+  .btn-ghost{
+    background:transparent;
+    color:var(--text);
+    border:1px solid var(--border);
+  }
+  .btn-ghost:hover{ border-color:rgba(255,255,255,0.3); }
+  .btn-block{ width:100%; }
+
+  /* ---------- Nav ---------- */
+  .nav{
+    position:sticky;
+    top:0;
+    z-index:200;
+    background:rgba(8,11,22,0.82);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--border);
+  }
+  .nav .container{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:16px 0;
+    gap:16px;
+  }
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    min-width:0;
+  }
+  .brand-mark{
+    width:38px; height:38px;
+    border-radius:11px;
+    background:var(--gradient);
+    display:flex;align-items:center;justify-content:center;
+    flex-shrink:0;
+  }
+  .brand-mark svg{ width:20px; height:20px; }
+  .brand-text{ display:flex; flex-direction:column; line-height:1.1; min-width:0; }
+  .brand-text strong{ font-family:"Fredoka",sans-serif; font-size:1.05rem; color:#fff; }
+  .brand-text span{ font-size:0.72rem; color:var(--text-dimmer); letter-spacing:0.02em; }
+  .nav-cta{ flex-shrink:0; }
+  .nav .btn-primary{ padding:11px 22px; font-size:0.92rem; }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    padding:70px 0 90px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;
+    top:-160px; right:-120px;
+    width:520px; height:520px;
+    background:radial-gradient(circle,rgba(77,216,255,0.18),transparent 65%);
+    pointer-events:none;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;
+    bottom:-200px; left:-140px;
+    width:480px; height:480px;
+    background:radial-gradient(circle,rgba(167,139,250,0.15),transparent 65%);
+    pointer-events:none;
+  }
+  .hero .container{
+    display:grid;
+    grid-template-columns:1.05fr 0.95fr;
+    gap:56px;
+    align-items:center;
+    position:relative;
+    z-index:1;
+  }
+  @media (max-width:900px){
+    .hero .container{ grid-template-columns:1fr; }
+    .hero-media{ order:-1; }
+  }
+  .hero h1{
+    font-size:clamp(2.1rem,4.6vw,3.3rem);
+    margin-bottom:20px;
+    letter-spacing:-0.01em;
+  }
+  .hero h1 .grad{
+    background:var(--gradient);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+  }
+  .hero-desc{
+    font-size:1.1rem;
+    color:var(--text-dim);
+    max-width:540px;
+    margin-bottom:32px;
+  }
+  .hero-actions{ display:flex; align-items:center; gap:16px; flex-wrap:wrap; margin-bottom:28px; }
+  .hero-price-hint{ font-size:0.9rem; color:var(--text-dimmer); }
+  .hero-badges{ display:flex; flex-wrap:wrap; gap:10px; }
+  .pill{
+    display:inline-flex; align-items:center; gap:7px;
+    font-size:0.82rem; font-weight:500;
+    color:var(--text-dim);
+    background:var(--surface);
+    border:1px solid var(--border);
+    padding:8px 14px;
+    border-radius:999px;
+  }
+  .pill svg{ width:14px; height:14px; color:var(--green); flex-shrink:0; }
+
+  .hero-media{ position:relative; }
+  .hero-media-frame{
+    position:relative;
+    border-radius:26px;
+    padding:14px;
+    background:linear-gradient(160deg,rgba(77,216,255,0.14),rgba(167,139,250,0.08));
+    border:1px solid var(--border);
+  }
+  .hero-media-frame img{
+    width:100%;
+    border-radius:18px;
+    box-shadow:0 30px 70px -30px rgba(0,0,0,0.7);
+  }
+  .hero-float{
+    position:absolute;
+    background:var(--surface-2);
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:12px 16px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    box-shadow:0 16px 32px -16px rgba(0,0,0,0.6);
+    font-size:0.85rem;
+    font-weight:600;
+  }
+  .hero-float.f1{ top:-16px; left:-16px; }
+  .hero-float.f2{ bottom:-18px; right:-14px; }
+  .hero-float svg{ width:18px; height:18px; color:var(--blue); }
+  @media (max-width:520px){
+    .hero-float{ display:none; }
+  }
+
+  /* ---------- Intro / why it matters ---------- */
+  .intro-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:24px;
+  }
+  @media (max-width:760px){ .intro-grid{ grid-template-columns:1fr; } }
+  .intro-card{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:var(--radius-lg);
+    padding:32px;
+  }
+  .intro-card h3{ font-size:1.25rem; margin-bottom:12px; }
+  .intro-card p{ color:var(--text-dim); }
+  .intro-card.accent{
+    background:linear-gradient(160deg,rgba(77,216,255,0.1),rgba(167,139,250,0.06));
+    border-color:rgba(77,216,255,0.22);
+  }
+
+  /* ---------- Topics grid ---------- */
+  .topic-grid{
+    display:grid;
+    grid-template-columns:repeat(4,minmax(0,1fr));
+    gap:18px;
+  }
+  @media (max-width:1024px){ .topic-grid{ grid-template-columns:repeat(2,minmax(0,1fr)); } }
+  @media (max-width:520px){ .topic-grid{ grid-template-columns:1fr; } }
+  .topic-card{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:var(--radius-md);
+    padding:24px;
+    min-width:0;
+  }
+  .topic-icon{
+    width:44px; height:44px;
+    border-radius:12px;
+    background:rgba(77,216,255,0.1);
+    border:1px solid rgba(77,216,255,0.25);
+    display:flex; align-items:center; justify-content:center;
+    margin-bottom:16px;
+  }
+  .topic-icon svg{ width:22px; height:22px; color:var(--blue); }
+  .topic-card h3{ font-size:1.05rem; margin-bottom:8px; }
+  .topic-card p{ font-size:0.92rem; color:var(--text-dim); }
+
+  /* ---------- Benefits ---------- */
+  .benefit-grid{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:18px;
+  }
+  @media (max-width:900px){ .benefit-grid{ grid-template-columns:repeat(2,minmax(0,1fr)); } }
+  @media (max-width:560px){ .benefit-grid{ grid-template-columns:1fr; } }
+  .benefit-card{
+    display:flex; gap:14px;
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:var(--radius-md);
+    padding:22px;
+  }
+  .benefit-icon{
+    width:38px;height:38px;flex-shrink:0;
+    border-radius:10px;
+    background:rgba(62,230,168,0.12);
+    border:1px solid rgba(62,230,168,0.28);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .benefit-icon svg{ width:19px;height:19px;color:var(--green); }
+  .benefit-card h3{ font-size:1rem; margin-bottom:6px; }
+  .benefit-card p{ font-size:0.9rem; color:var(--text-dim); }
+
+  /* ---------- Preview section ---------- */
+  .preview{
+    background:var(--bg-soft);
+    border-top:1px solid var(--border);
+    border-bottom:1px solid var(--border);
+  }
+  .preview .container{
+    display:grid;
+    grid-template-columns:0.95fr 1.05fr;
+    gap:48px;
+    align-items:center;
+  }
+  @media (max-width:900px){ .preview .container{ grid-template-columns:1fr; } }
+  .preview-media img{
+    width:100%;
+    border-radius:var(--radius-lg);
+    border:1px solid var(--border);
+    box-shadow:var(--shadow-glow);
+  }
+  .preview-text ul{ margin-top:22px; display:flex; flex-direction:column; gap:14px; }
+  .preview-text li{
+    display:flex; gap:12px;
+    color:var(--text-dim);
+    font-size:0.98rem;
+  }
+  .preview-text li strong{ color:var(--text); }
+  .preview-text li svg{ width:20px;height:20px;color:var(--green);flex-shrink:0;margin-top:2px; }
+
+  /* ---------- Bonus cards ---------- */
+  .bonus-grid{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:22px;
+  }
+  @media (max-width:1024px){ .bonus-grid{ grid-template-columns:repeat(2,minmax(0,1fr)); } }
+  @media (max-width:600px){ .bonus-grid{ grid-template-columns:1fr; } }
+  .bonus-card{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:var(--radius-lg);
+    overflow:hidden;
+    min-width:0;
+    display:flex;
+    flex-direction:column;
+  }
+  .bonus-card img{
+    width:100%;
+    aspect-ratio:16/11;
+    object-fit:cover;
+    object-position:center;
+    background:var(--surface-2);
+  }
+  .bonus-card-body{ padding:22px; }
+  .bonus-tag{
+    display:inline-block;
+    font-size:0.72rem;
+    font-weight:700;
+    color:var(--bg);
+    background:var(--amber);
+    padding:4px 10px;
+    border-radius:999px;
+    margin-bottom:12px;
+  }
+  .bonus-card h3{ font-size:1.05rem; margin-bottom:8px; }
+  .bonus-card p{ font-size:0.9rem; color:var(--text-dim); }
+
+  /* ---------- Who it's for ---------- */
+  .audience-grid{
+    display:grid;
+    grid-template-columns:repeat(5,minmax(0,1fr));
+    gap:16px;
+  }
+  @media (max-width:900px){ .audience-grid{ grid-template-columns:repeat(3,minmax(0,1fr)); } }
+  @media (max-width:520px){ .audience-grid{ grid-template-columns:repeat(2,minmax(0,1fr)); } }
+  .audience-card{
+    text-align:center;
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:var(--radius-md);
+    padding:26px 14px;
+  }
+  .audience-icon{
+    width:46px;height:46px;
+    margin:0 auto 14px;
+    border-radius:50%;
+    background:rgba(167,139,250,0.12);
+    border:1px solid rgba(167,139,250,0.28);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .audience-icon svg{ width:22px;height:22px;color:var(--violet); }
+  .audience-card p{ font-size:0.9rem; font-weight:600; }
+
+  /* ---------- Pricing ---------- */
+  .pricing{
+    background:var(--bg-soft);
+    border-top:1px solid var(--border);
+    border-bottom:1px solid var(--border);
+  }
+  .price-card{
+    max-width:620px;
+    margin-inline:auto;
+    background:var(--surface);
+    border:1px solid rgba(77,216,255,0.3);
+    border-radius:var(--radius-lg);
+    padding:44px;
+    box-shadow:var(--shadow-glow);
+    position:relative;
+  }
+  @media (max-width:560px){ .price-card{ padding:30px 22px; } }
+  .price-card h3{ font-size:1.3rem; margin-bottom:6px; }
+  .price-card > p.sub{ color:var(--text-dim); margin-bottom:26px; font-size:0.95rem; }
+  .price-list{ display:flex; flex-direction:column; gap:12px; margin-bottom:28px; }
+  .price-list li{
+    display:flex; gap:10px; align-items:flex-start;
+    font-size:0.95rem; color:var(--text-dim);
+  }
+  .price-list li svg{ width:18px;height:18px;color:var(--green); flex-shrink:0; margin-top:3px; }
+  .price-list li strong{ color:var(--text); }
+  .price-row{
+    display:flex; align-items:baseline; gap:12px; flex-wrap:wrap;
+    padding:22px 0;
+    border-top:1px dashed var(--border);
+    border-bottom:1px dashed var(--border);
+    margin-bottom:26px;
+  }
+  .price-now{ font-family:"Fredoka",sans-serif; font-size:2.6rem; color:var(--green); }
+  .price-old{ font-size:1.2rem; color:var(--text-dimmer); text-decoration:line-through; }
+  .price-save{
+    font-size:0.8rem; font-weight:700;
+    color:#06121a; background:var(--amber);
+    padding:4px 10px; border-radius:999px;
+  }
+  .price-note{ font-size:0.85rem; color:var(--text-dimmer); margin-top:16px; text-align:center; }
+  .price-urgency{
+    display:flex; align-items:center; justify-content:center; gap:8px;
+    font-size:0.85rem; color:var(--amber);
+    margin-top:14px;
+  }
+
+  /* ---------- FAQ ---------- */
+  .faq-list{ max-width:760px; margin-inline:auto; display:flex; flex-direction:column; gap:12px; }
+  .faq-item{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:var(--radius-md);
+    padding:6px 22px;
+  }
+  .faq-item summary{
+    cursor:pointer;
+    list-style:none;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    padding:18px 0;
+    font-weight:600;
+    font-size:1rem;
+    color:var(--text);
+  }
+  .faq-item summary::-webkit-details-marker{ display:none; }
+  .faq-plus{
+    width:22px;height:22px;flex-shrink:0;
+    border-radius:50%;
+    border:1px solid var(--border);
+    display:flex;align-items:center;justify-content:center;
+    position:relative;
+  }
+  .faq-plus::before, .faq-plus::after{
+    content:"";
+    position:absolute;
+    background:var(--text-dim);
+    transition:transform 0.2s ease;
+  }
+  .faq-plus::before{ width:10px;height:1.5px; }
+  .faq-plus::after{ width:1.5px;height:10px; }
+  details[open] .faq-plus::after{ transform:scaleY(0); }
+  .faq-item p{ color:var(--text-dim); font-size:0.95rem; padding-bottom:20px; }
+
+  /* ---------- Final CTA ---------- */
+  .final-cta{
+    text-align:center;
+    background:linear-gradient(160deg,rgba(77,216,255,0.1),rgba(167,139,250,0.08));
+    border-top:1px solid var(--border);
+  }
+  .final-cta h2{ font-size:clamp(1.6rem,3.6vw,2.3rem); margin-bottom:14px; }
+  .final-cta p{ color:var(--text-dim); max-width:520px; margin:0 auto 30px; }
+
+  /* ---------- Footer ---------- */
+  footer{
+    padding:44px 0 34px;
+    border-top:1px solid var(--border);
+  }
+  .footer-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    flex-wrap:wrap;
+  }
+  .footer-note{ font-size:0.85rem; color:var(--text-dimmer); max-width:480px; }
+  .footer-copy{ font-size:0.8rem; color:var(--text-dimmer); margin-top:18px; }
+
+  /* ---------- Sticky mobile CTA ---------- */
+  .sticky-cta{
+    position:fixed;
+    left:0; right:0; bottom:0;
+    width:100%;
+    max-width:100%;
+    z-index:500;
+    background:rgba(10,14,28,0.95);
+    backdrop-filter:blur(12px);
+    border-top:1px solid var(--border);
+    padding:10px 16px calc(10px + env(safe-area-inset-bottom));
+    box-sizing:border-box;
+    display:flex;
+    align-items:center;
+    gap:14px;
+  }
+  .sticky-cta-price{ display:flex; flex-direction:column; line-height:1.1; flex-shrink:0; }
+  .sticky-cta-price .now{ font-family:"Fredoka",sans-serif; font-weight:600; color:var(--green); font-size:1.05rem; }
+  .sticky-cta-price .old{ font-size:0.72rem; color:var(--text-dimmer); text-decoration:line-through; }
+  .sticky-cta a{
+    flex:1;
+    min-width:0;
+    max-width:600px;
+    margin:0 auto;
+  }
+  @media (min-width:860px){
+    .sticky-cta{ display:none; }
+  }
+
+  ::selection{ background:rgba(77,216,255,0.3); }
+
+  @media (prefers-reduced-motion:reduce){
+    *{ animation:none !important; transition:none !important; }
+    html{ scroll-behavior:auto; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container">
+    <div class="brand">
+      <span class="brand-mark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#06121a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="8" width="14" height="11" rx="3"/><circle cx="9" cy="13" r="1.2" fill="#06121a"/><circle cx="15" cy="13" r="1.2" fill="#06121a"/><path d="M12 8V4"/><circle cx="12" cy="3" r="1"/></svg>
+      </span>
+      <span class="brand-text">
+        <strong>RoboFuture Kids</strong>
+        <span>Learn · Create · Innovate</span>
+      </span>
+    </div>
+    <a class="btn btn-primary nav-cta" href="https://superprofile.bio/vp/robofuture-kids-ai-robotics-guide" target="_blank" rel="noopener noreferrer">Get the Guide</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <div class="hero-copy">
+      <span class="eyebrow">🚀 Limited-time launch offer</span>
+      <h1>Help your child explore <span class="grad">AI and robotics</span> the beginner-friendly way</h1>
+      <p class="hero-desc">A simple, guided digital resource that introduces kids to AI, robotics, electronics and STEM concepts through easy explanations and hands-on activities. No prior experience needed — for parents, homeschoolers and curious beginners alike.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://superprofile.bio/vp/robofuture-kids-ai-robotics-guide" target="_blank" rel="noopener noreferrer">Get Instant Access – ₹299</a>
+        <span class="hero-price-hint">Usual value ₹1,999 · one-time payment</span>
+      </div>
+      <div class="hero-badges">
+        <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Digital download</span>
+        <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Beginner-friendly</span>
+        <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Educational resource</span>
+      </div>
+    </div>
+    <div class="hero-media">
+      <div class="hero-media-frame">
+        <img src="robofuture-cover.png" alt="RoboFuture Kids AI and Robotics Learning Guide cover">
+      </div>
+      <div class="hero-float f1">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg>
+        Instant access
+      </div>
+      <div class="hero-float f2">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h9l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"/><path d="M14 2v5h5"/></svg>
+        Digital PDF guide
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="intro">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Why this matters</span>
+      <h2>Screen time doesn't have to be passive</h2>
+      <p>Kids are naturally curious about technology — but most of what they see on a screen asks nothing of them in return. Guided, hands-on STEM activities give that curiosity somewhere to go.</p>
+    </div>
+    <div class="intro-grid">
+      <div class="intro-card">
+        <h3>The challenge</h3>
+        <p>Many children spend hours on screens that entertain but don't engage them in creating, building, or problem-solving — leaving little room for the kind of curiosity that leads to real learning.</p>
+      </div>
+      <div class="intro-card accent">
+        <h3>A simple starting point</h3>
+        <p>RoboFuture Kids introduces AI, robotics and electronics through short, easy-to-follow explanations and beginner-friendly activities — giving children (and the adults guiding them) a structured, low-pressure way to start exploring technology together.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="topics">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Inside the guide</span>
+      <h2>What children will learn</h2>
+      <p>Eight core topics, each explained simply and built around real curiosity — not jargon.</p>
+    </div>
+    <div class="topic-grid">
+      <div class="topic-card">
+        <span class="topic-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9.5 3.5a3.5 3.5 0 0 0-3.4 4.3A3.5 3.5 0 0 0 5 14a3.5 3.5 0 0 0 1 6.5 3.5 3.5 0 0 0 6-2.3V6a2.5 2.5 0 0 0-2.5-2.5z"/><path d="M14.5 3.5a3.5 3.5 0 0 1 3.4 4.3A3.5 3.5 0 0 1 19 14a3.5 3.5 0 0 1-1 6.5 3.5 3.5 0 0 1-6-2.3V6a2.5 2.5 0 0 1 2.5-2.5z"/></svg></span>
+        <h3>Artificial Intelligence</h3>
+        <p>What AI is and how it shows up in everyday life, explained simply.</p>
+      </div>
+      <div class="topic-card">
+        <span class="topic-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="7" width="14" height="12" rx="3"/><circle cx="9.5" cy="12.5" r="1.2" fill="currentColor" stroke="none"/><circle cx="14.5" cy="12.5" r="1.2" fill="currentColor" stroke="none"/><path d="M9 16h6M12 7V3"/><circle cx="12" cy="2" r="1"/></svg></span>
+        <h3>Robotics</h3>
+        <p>How robots sense, think and act — the basics behind every robot.</p>
+      </div>
+      <div class="topic-card">
+        <span class="topic-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M9 3v4M15 3v4M9 17v4M15 17v4M3 9h4M3 15h4M17 9h4M17 15h4"/></svg></span>
+        <h3>Electronics</h3>
+        <p>A gentle introduction to circuits, components and how they connect.</p>
+      </div>
+      <div class="topic-card">
+        <span class="topic-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m9 6-6 6 6 6M15 6l6 6-6 6"/></svg></span>
+        <h3>Arduino Basics</h3>
+        <p>A friendly first look at Arduino boards and how simple code controls them.</p>
+      </div>
+      <div class="topic-card">
+        <span class="topic-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.6 1.6 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.6 1.6 0 0 0-1.8-.3 1.6 1.6 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.6 1.6 0 0 0-1-1.5 1.6 1.6 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.6 1.6 0 0 0 .3-1.8 1.6 1.6 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.6 1.6 0 0 0 1.5-1 1.6 1.6 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.6 1.6 0 0 0 1.8.3H9a1.6 1.6 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.6 1.6 0 0 0 1 1.5 1.6 1.6 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.6 1.6 0 0 0-.3 1.8V9a1.6 1.6 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.6 1.6 0 0 0-1.5 1z"/></svg></span>
+        <h3>Motors &amp; Sensors</h3>
+        <p>How motors move and sensors "sense" the world around them.</p>
+      </div>
+      <div class="topic-card">
+        <span class="topic-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19V9l8-5 8 5v10"/><path d="M9 19v-6h6v6"/></svg></span>
+        <h3>STEM Projects</h3>
+        <p>Simple, beginner-friendly project ideas to try hands-on.</p>
+      </div>
+      <div class="topic-card">
+        <span class="topic-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-4 10.5c.6.6 1 1.4 1 2.5h6c0-1.1.4-1.9 1-2.5A6 6 0 0 0 12 3z"/></svg></span>
+        <h3>Creative Problem-Solving</h3>
+        <p>Encouraging kids to think through ideas, not just follow steps.</p>
+      </div>
+      <div class="topic-card">
+        <span class="topic-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg></span>
+        <h3>Future Technology</h3>
+        <p>A friendly look at where technology may be headed next.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="benefits">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Why it helps</span>
+      <h2>Benefits for your child</h2>
+    </div>
+    <div class="benefit-grid">
+      <div class="benefit-card">
+        <span class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></span>
+        <div><h3>Builds curiosity</h3><p>Encourages kids to ask "how does this work?" and explore the answer.</p></div>
+      </div>
+      <div class="benefit-card">
+        <span class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg></span>
+        <div><h3>Encourages creativity</h3><p>Open-ended activities that invite kids to try their own ideas.</p></div>
+      </div>
+      <div class="benefit-card">
+        <span class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="m7 15 4-5 3 3 5-7"/></svg></span>
+        <div><h3>Improves logical thinking</h3><p>Step-by-step activities that build sequencing and reasoning skills.</p></div>
+      </div>
+      <div class="benefit-card">
+        <span class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M9 9h6v6H9z"/></svg></span>
+        <div><h3>Future-ready concepts</h3><p>An early, friendly introduction to ideas kids will meet again later.</p></div>
+      </div>
+      <div class="benefit-card">
+        <span class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6.5 12.5 10 16l7.5-7.5"/><path d="M4 4h16v16H4z"/></svg></span>
+        <div><h3>Hands-on learning</h3><p>Activities designed to be tried out, not just read about.</p></div>
+      </div>
+      <div class="benefit-card">
+        <span class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span>
+        <div><h3>Fun, educational screen time</h3><p>When a screen is used, it's guiding kids toward something they made.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="preview">
+  <div class="container">
+    <div class="preview-media">
+      <img src="guide-preview.png" alt="Preview of RoboFuture Kids robotics and AI learning pages">
+    </div>
+    <div class="preview-text">
+      <span class="eyebrow">What you receive</span>
+      <h2>One guide, built to be read and used together</h2>
+      <p style="color:var(--text-dim);margin-top:14px;">RoboFuture Kids is delivered as a digital guide you can read on any device or print at home. Here's what's included:</p>
+      <ul>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Beginner-friendly AI &amp; robotics lessons</strong> — written in simple, age-appropriate language.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Easy-to-understand STEM explanations</strong> covering electronics, Arduino, motors and sensors.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Simple hands-on project ideas</strong> to try at home with basic materials.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg><span><strong>A printable-friendly layout</strong> so you can use it on-screen or on paper.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Instant digital download</strong> — start exploring right after checkout.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="bonuses">
+  <div class="container">
+    <div class="section-head center">
+      <span class="eyebrow">Bonus resources</span>
+      <h2>Included bonuses — no extra cost</h2>
+      <p>A few extra activity resources for younger siblings or early learners, bundled in with your purchase.</p>
+    </div>
+    <div class="bonus-grid">
+      <div class="bonus-card">
+        <img src="colouring-bundle.png" alt="Kids Colouring Bundle preview">
+        <div class="bonus-card-body">
+          <span class="bonus-tag">Bonus</span>
+          <h3>Kids Colouring Bundle</h3>
+          <p>Printable colouring pages for creative, screen-free downtime.</p>
+        </div>
+      </div>
+      <div class="bonus-card">
+        <img src="preschool-worksheets.png" alt="Pre-School Worksheet Bundle preview">
+        <div class="bonus-card-body">
+          <span class="bonus-tag">Bonus</span>
+          <h3>Pre-School Worksheet Bundle</h3>
+          <p>Early-learning worksheets for younger children in the family.</p>
+        </div>
+      </div>
+      <div class="bonus-card">
+        <img src="alphabet-workbook.png" alt="Alphabet Toddler Workbook preview">
+        <div class="bonus-card-body">
+          <span class="bonus-tag">Bonus</span>
+          <h3>Alphabet Toddler Workbook</h3>
+          <p>Simple letter-tracing and recognition pages for toddlers.</p>
+        </div>
+      </div>
+      <div class="bonus-card">
+        <img src="extra-activity-workbook.png" alt="Extra kids activity workbook preview">
+        <div class="bonus-card-body">
+          <span class="bonus-tag">Bonus</span>
+          <h3>Extra Activity Workbook</h3>
+          <p>Additional puzzles and activity pages for hands-on practice.</p>
+        </div>
+      </div>
+      <div class="bonus-card">
+        <img src="extra-learning-workbook.png" alt="Extra kids learning workbook preview">
+        <div class="bonus-card-body">
+          <span class="bonus-tag">Bonus</span>
+          <h3>Extra Learning Workbook</h3>
+          <p>More printable pages to round out early learning practice.</p>
+        </div>
+      </div>
+      <div class="bonus-card">
+        <img src="extra-activity-resources.png" alt="Extra kids activity resource preview">
+        <div class="bonus-card-body">
+          <span class="bonus-tag">Bonus</span>
+          <h3>Extra Activity Resource</h3>
+          <p>A final set of bonus pages included with your purchase.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="audience">
+  <div class="container">
+    <div class="section-head center">
+      <span class="eyebrow">Who it's for</span>
+      <h2>Built for curious minds of every kind</h2>
+    </div>
+    <div class="audience-grid">
+      <div class="audience-card">
+        <span class="audience-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg></span>
+        <p>Curious Kids</p>
+      </div>
+      <div class="audience-card">
+        <span class="audience-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
+        <p>Parents</p>
+      </div>
+      <div class="audience-card">
+        <span class="audience-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m3 12 9-9 9 9"/><path d="M5 10v10h14V10"/></svg></span>
+        <p>Homeschooling Families</p>
+      </div>
+      <div class="audience-card">
+        <span class="audience-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 9 12 4l10 5-10 5-10-5z"/><path d="M6 11.5V17c0 1.7 2.7 3 6 3s6-1.3 6-3v-5.5"/></svg></span>
+        <p>Teachers</p>
+      </div>
+      <div class="audience-card">
+        <span class="audience-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg></span>
+        <p>STEM Beginners</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pricing" id="pricing">
+  <div class="container">
+    <div class="price-card">
+      <span class="eyebrow">🚀 Limited-time launch offer</span>
+      <h3>RoboFuture Kids — AI &amp; Robotics Learning Guide</h3>
+      <p class="sub">Everything below is delivered as one instant digital download.</p>
+      <ul class="price-list">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg><span><strong>RoboFuture Kids Guide</strong> — AI, robotics, electronics &amp; STEM for beginners</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Kids Colouring Bundle</strong> (bonus)</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Pre-School Worksheet Bundle</strong> (bonus)</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Alphabet Toddler Workbook</strong> (bonus)</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg><span><strong>3 extra activity resources</strong> (bonus)</span></li>
+      </ul>
+      <div class="price-row">
+        <span class="price-now">₹299</span>
+        <span class="price-old">₹1,999</span>
+        <span class="price-save">Save 85%</span>
+      </div>
+      <a class="btn btn-primary btn-block" href="https://superprofile.bio/vp/robofuture-kids-ai-robotics-guide" target="_blank" rel="noopener noreferrer">Get Instant Access Now</a>
+      <p class="price-note">Secure checkout · Instant digital access · One-time payment, no subscription</p>
+      <div class="price-urgency">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+        Offer may end soon
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="section-head center">
+      <span class="eyebrow">Questions</span>
+      <h2>Frequently asked questions</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>What is RoboFuture Kids?<span class="faq-plus"></span></summary>
+        <p>RoboFuture Kids is a digital guide that introduces children to AI, robotics, electronics and STEM concepts through simple explanations and beginner-friendly activities.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What age group is it suitable for?<span class="faq-plus"></span></summary>
+        <p>The guide is designed for children with an interest in technology, with content that parents or teachers can adapt to suit the child's age and reading level. The included bonus resources also cover earlier learning stages, such as pre-school and toddler activities.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is this a physical product?<span class="faq-plus"></span></summary>
+        <p>No. RoboFuture Kids is a 100% digital product. There is nothing physical shipped to you — everything is delivered as a digital download.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How will I receive the files?<span class="faq-plus"></span></summary>
+        <p>After checkout, you'll receive instant access to download the guide and all bonus resources digitally.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Do I need previous robotics knowledge?<span class="faq-plus"></span></summary>
+        <p>No prior experience is required. The guide is written to be beginner-friendly for both children and the adults guiding them.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Are the bonuses included?<span class="faq-plus"></span></summary>
+        <p>Yes. The Kids Colouring Bundle, Pre-School Worksheet Bundle, Alphabet Toddler Workbook and additional activity resources are all included at no extra cost with your purchase.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Can I access it on mobile or laptop?<span class="faq-plus"></span></summary>
+        <p>Yes. As a digital download, you can access and read the guide on a mobile phone, tablet, or laptop, or print it at home.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What should I do if I face a download issue?<span class="faq-plus"></span></summary>
+        <p>If you run into any issue accessing your files after purchase, please reach out through the support contact provided on the checkout page and it will be resolved for you.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="container">
+    <h2>Help your child explore the technology of tomorrow</h2>
+    <p>One simple guide. A beginner-friendly starting point for AI, robotics and STEM.</p>
+    <a class="btn btn-primary" href="https://superprofile.bio/vp/robofuture-kids-ai-robotics-guide" target="_blank" rel="noopener noreferrer">Get RoboFuture Kids for ₹299</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="brand">
+        <span class="brand-mark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#06121a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="8" width="14" height="11" rx="3"/><circle cx="9" cy="13" r="1.2" fill="#06121a"/><circle cx="15" cy="13" r="1.2" fill="#06121a"/><path d="M12 8V4"/><circle cx="12" cy="3" r="1"/></svg>
+        </span>
+        <span class="brand-text">
+          <strong>RoboFuture Kids</strong>
+          <span>Learn · Create · Innovate</span>
+        </span>
+      </div>
+      <a class="btn btn-ghost" href="https://superprofile.bio/vp/robofuture-kids-ai-robotics-guide" target="_blank" rel="noopener noreferrer">Get the Guide</a>
+    </div>
+    <p class="footer-note">Digital educational resources for curious kids.</p>
+    <p class="footer-copy">© RoboFuture Kids. All rights reserved.</p>
+  </div>
+</footer>
+
+<div class="sticky-cta">
+  <div class="sticky-cta-price">
+    <span class="now">₹299</span>
+    <span class="old">₹1,999</span>
+  </div>
+  <a class="btn btn-primary" href="https://superprofile.bio/vp/robofuture-kids-ai-robotics-guide" target="_blank" rel="noopener noreferrer">Get Instant Access</a>
+</div>
+
+</body>
+</html>
